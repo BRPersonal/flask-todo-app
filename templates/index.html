@@ -3,32 +3,37 @@
   <title>Task Master</title>
 {% endblock %}
 {% block body %}
-  <form action="/" method="POST">
-    <input type="text" name="content" id="content"/>
-    <input type="submit" value="Add Task"/>
-  </form>
-
-  <br><br>
   <div class="content">
     <h1 style="text-align: center">Task Master</h1>
-    <table>
-      <tr>
-        <th>Task</th>
-        <th>Added On</th>
-        <th>Actions</th>
-      </tr>
-      {% for tsk in tasks %}
+    {% if tasks|length == 0 %}
+      <h4 style="text-align: center">There are no Tasks. Create one below! </h4>
+    {% else %}
+      <table>
         <tr>
-          <td>{{ tsk.content}}</td>
-          <td>{{ tsk.date_created.date()}}</td>
-          <td>
-            <a href="/delete/{{tsk.id}}">Delete</a>
-            <br>
-            <a href="">Update</a>
-          </td>
+          <th>Task</th>
+          <th>Added On</th>
+          <th>Actions</th>
         </tr>
-      {% endfor %}
-    </table>
+        {% for tsk in tasks %}
+          <tr>
+            <td>{{ tsk.content}}</td>
+            <td>{{ tsk.date_created.date()}}</td>
+            <td>
+              <a href="/delete/{{tsk.id}}">Delete</a>
+              <br>
+              <a href="/update/{{tsk.id}}">Update</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% endif %}
+
+    <div class="form">
+      <form action="/" method="POST">
+        <input type="text" name="content" id="content"/>
+        <input type="submit" value="Add Task"/>
+      </form>
+    </div>
 
   </div>
 {% endblock %}

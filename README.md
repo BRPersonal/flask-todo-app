@@ -36,4 +36,3 @@ sqllite 3 forward-slashes is relative path, four forward-slashes is absolute pat
 source env/bin/activate
 
 
-stopped at 21.19
