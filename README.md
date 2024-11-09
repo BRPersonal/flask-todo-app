@@ -28,11 +28,17 @@ $ (env) pip install -r requirements.txt
 To check what versions are installed in virtual environment run
 $ pip list
 
+You could also use pip freeze command to capture packages currently
+installed in the environment and create requirements.txt
+$ pip freeze > requirements.txt
+
 
 Finally start the web server:
 $ (env) python app.py
 
-sqllite 3 forward-slashes is relative path, four forward-slashes is absolute path
-source env/bin/activate
-
+Note on sqlite
+--------
+path with 3 forward-slashes is relative path 
+path with four forward-slashes is absolute path
+database will be created in instance folder
 
