@@ -4,7 +4,6 @@ A simple Flask app using python that demonstrates CRUD operations with a databas
 Learn Flask for python - Full tutorial
 https://www.youtube.com/watch?v=Z1RJmh_OqeA&list=WL&index=11
 
-
 open a terminal
 #Install virtual env
 $ pip install virtualenv
@@ -19,6 +18,13 @@ $ source env/bin/activate
 You will get into env prompt. Now you are inside virtual environment
 Now after this, anything that you install is contained within this env
 and will not install globally on your system. Your system is shielded from this env
+
+To verify that you are indeed inside the virtual environment,
+run the command
+which python
+You should get output that points to env folder of your project directory
+$ which python
+/Users/adiyen/poc/flask-todo-app/env/bin/python
 
 Install the necessary dependencies in this virtual environment.
 (env) is a prompt that indicates you are in virtual environment. It is
